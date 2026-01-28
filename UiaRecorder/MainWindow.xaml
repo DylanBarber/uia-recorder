@@ -13,11 +13,24 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,12">
-            <Button Content="Record" Width="90" Height="32" Margin="0,0,8,0" Command="{Binding StartCommand}" />
-            <Button Content="Stop" Width="90" Height="32" Margin="0,0,16,0" Command="{Binding StopCommand}" />
-            <CheckBox Content="Capture passwords" VerticalAlignment="Center" IsChecked="{Binding AllowPasswordCapture}" />
-        </StackPanel>
+        <Grid Grid.Row="0" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                <Button Content="Record" Width="90" Height="32" Margin="0,0,8,0" Command="{Binding StartCommand}" />
+                <Button Content="Stop" Width="90" Height="32" Margin="0,0,16,0" Command="{Binding StopCommand}" />
+                <CheckBox Content="Capture passwords" VerticalAlignment="Center" IsChecked="{Binding AllowPasswordCapture}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <Button Content="Analyze" Width="90" Height="32" Margin="0,0,8,0" Command="{Binding AnalyzeCommand}" />
+                <CheckBox Content="Auto-Analyze" VerticalAlignment="Center" Margin="0,0,8,0" IsChecked="{Binding AutoAnalyze}" />
+                <Button Content="⚙" Width="32" Height="32" Command="{Binding ConfigCommand}" ToolTip="Open config help" />
+            </StackPanel>
+        </Grid>
 
         <Grid Grid.Row="1" Margin="0,0,0,12">
             <Grid.ColumnDefinitions>
@@ -28,22 +41,37 @@
             <Button Grid.Column="1" Content="Browse" Width="90" Height="28" Margin="8,0,0,0" Command="{Binding BrowseCommand}" />
         </Grid>
 
-        <Border Grid.Row="2" BorderThickness="1" BorderBrush="#DDDDDD" Padding="12" CornerRadius="6">
-            <StackPanel>
-                <TextBlock Text="Status" FontWeight="SemiBold" Margin="0,0,0,8" />
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
-                    <TextBlock Text="Elapsed:" Width="90" />
-                    <TextBlock Text="{Binding Elapsed}" />
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" BorderThickness="1" BorderBrush="#DDDDDD" Padding="12" CornerRadius="6" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="Status" FontWeight="SemiBold" Margin="0,0,0,8" />
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                        <TextBlock Text="Elapsed:" Width="90" />
+                        <TextBlock Text="{Binding Elapsed}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                        <TextBlock Text="Events:" Width="90" />
+                        <TextBlock Text="{Binding EventCount}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Dropped:" Width="90" />
+                        <TextBlock Text="{Binding DroppedCount}" />
+                    </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
-                    <TextBlock Text="Events:" Width="90" />
-                    <TextBlock Text="{Binding EventCount}" />
+            </Border>
+
+            <Border Grid.Column="1" BorderThickness="1" BorderBrush="#DDDDDD" Padding="12" CornerRadius="6">
+                <StackPanel>
+                    <TextBlock Text="Recordings" FontWeight="SemiBold" Margin="0,0,0,8" />
+                    <ListBox ItemsSource="{Binding Recordings}" DisplayMemberPath="DisplayName" SelectedItem="{Binding SelectedRecording}" Height="160" />
+                    <TextBlock Text="{Binding AnalysisStatus}" Margin="0,8,0,0" TextWrapping="Wrap" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Dropped:" Width="90" />
-                    <TextBlock Text="{Binding DroppedCount}" />
-                </StackPanel>
-            </StackPanel>
-        </Border>
+            </Border>
+        </Grid>
     </Grid>
 </Window>

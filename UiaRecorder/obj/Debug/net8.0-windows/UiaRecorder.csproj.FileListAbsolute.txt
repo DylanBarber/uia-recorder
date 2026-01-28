@@ -18,3 +18,16 @@ C:\projects\uia-tool\UiaRecorder\obj\Debug\net8.0-windows\refint\UiaRecorder.dll
 C:\projects\uia-tool\UiaRecorder\obj\Debug\net8.0-windows\UiaRecorder.pdb
 C:\projects\uia-tool\UiaRecorder\obj\Debug\net8.0-windows\UiaRecorder.genruntimeconfig.cache
 C:\projects\uia-tool\UiaRecorder\obj\Debug\net8.0-windows\ref\UiaRecorder.dll
+C:\projects\uia-tool\UiaRecorder\obj\Debug\net8.0-windows\UiaRecorder.csproj.AssemblyReference.cache
+C:\projects\uia-tool\UiaRecorder\bin\Debug\net8.0-windows\appsettings.json
+C:\projects\uia-tool\UiaRecorder\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+C:\projects\uia-tool\UiaRecorder\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\projects\uia-tool\UiaRecorder\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Binder.dll
+C:\projects\uia-tool\UiaRecorder\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\projects\uia-tool\UiaRecorder\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\projects\uia-tool\UiaRecorder\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\projects\uia-tool\UiaRecorder\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\projects\uia-tool\UiaRecorder\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\projects\uia-tool\UiaRecorder\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\projects\uia-tool\UiaRecorder\obj\Debug\net8.0-windows\UiaRecorder.sourcelink.json
+C:\projects\uia-tool\UiaRecorder\obj\Debug\net8.0-windows\UiaRecor.28252230.Up2Date
