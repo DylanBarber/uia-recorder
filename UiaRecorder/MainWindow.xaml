@@ -1,0 +1,49 @@
+<Window x:Class="UiaRecorder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UiaRecorder"
+        mc:Ignorable="d"
+        Title="UIA Recorder" Height="360" Width="720">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,12">
+            <Button Content="Record" Width="90" Height="32" Margin="0,0,8,0" Command="{Binding StartCommand}" />
+            <Button Content="Stop" Width="90" Height="32" Margin="0,0,16,0" Command="{Binding StopCommand}" />
+            <CheckBox Content="Capture passwords" VerticalAlignment="Center" IsChecked="{Binding AllowPasswordCapture}" />
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Height="28" VerticalContentAlignment="Center" Text="{Binding OutputDirectory}" IsReadOnly="True" />
+            <Button Grid.Column="1" Content="Browse" Width="90" Height="28" Margin="8,0,0,0" Command="{Binding BrowseCommand}" />
+        </Grid>
+
+        <Border Grid.Row="2" BorderThickness="1" BorderBrush="#DDDDDD" Padding="12" CornerRadius="6">
+            <StackPanel>
+                <TextBlock Text="Status" FontWeight="SemiBold" Margin="0,0,0,8" />
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                    <TextBlock Text="Elapsed:" Width="90" />
+                    <TextBlock Text="{Binding Elapsed}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                    <TextBlock Text="Events:" Width="90" />
+                    <TextBlock Text="{Binding EventCount}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Dropped:" Width="90" />
+                    <TextBlock Text="{Binding DroppedCount}" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
